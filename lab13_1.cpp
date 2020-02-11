@@ -18,43 +18,65 @@ void UpdateArr (T a[],int N)
 }
 
 template <typename T>
-void insertionSort(T d[],int N){
-	
-		for (int j = 0; j < N; j++)
+void insertionSort(T d[],int N)
+{
+	int position;
+	for (int i = 1; i < N; i++)
+	{
+		for (int k = 0; k < N; k++)
 		{
-			for (int i = 0; i < N-1; i++)
+			if (k == i)
 			{
+				cout << "[" << d[k] << "]" << " ";
+			}
+			else
+			{
+				cout << d[k] << " ";
+			}
 			
-				for (int k = 0; k < N; k++)
-				{
-					
-					cout << d[k] << " ";
+			
+		}
 
-				}
-				if (i%2 == 0)
+		for (int j = i; j > 0; j--)
+		{
+			if (d[j] > d[j-1])
+			{
+				swap(d,j,j-1);
+				position = j-1;
+			}
+			else
+			{
+				if (j == i)
 				{
-					cout << " => ";
-				}
-				else
-				{
-					cout << endl;
+					position = i;
 				}
 				
-			
-			
-			
-
-				if (d[i+1] > d[i])
-				{
-					int min = d[i];
-					int minpo = i;
-
-					swap(d,i+1,i);
-				}
-		
+				
 			}
-
+			
+			
+			
+			
 		}
+		cout << " => ";
+
+		for (int l = 0; l < N; l++)
+		{
+			if (l == position)
+			{
+				cout << "[" << d[l] << "]" << " ";
+			}
+			else
+			{
+				cout << d[l] << " ";
+			}
+			
+			
+		}
+		cout << endl;
+
+	}
+
 }
 
 int main(){
