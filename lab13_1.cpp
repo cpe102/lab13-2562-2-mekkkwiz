@@ -10,10 +10,51 @@ void swap(T d[],int x,int y){
 }
 
 template <typename T>
+void UpdateArr (T a[],int N)
+{
+	
+	
+
+}
+
+template <typename T>
 void insertionSort(T d[],int N){
 	
-//Write your code here.
+		for (int j = 0; j < N; j++)
+		{
+			for (int i = 0; i < N-1; i++)
+			{
+			
+				for (int k = 0; k < N; k++)
+				{
+					
+					cout << d[k] << " ";
 
+				}
+				if (i%2 == 0)
+				{
+					cout << " => ";
+				}
+				else
+				{
+					cout << endl;
+				}
+				
+			
+			
+			
+
+				if (d[i+1] > d[i])
+				{
+					int min = d[i];
+					int minpo = i;
+
+					swap(d,i+1,i);
+				}
+		
+			}
+
+		}
 }
 
 int main(){
